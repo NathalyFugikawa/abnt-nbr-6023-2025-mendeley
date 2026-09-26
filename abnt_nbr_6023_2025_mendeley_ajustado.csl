@@ -12,11 +12,11 @@
       Creative Commons Attribution-ShareAlike 4.0 International
     </rights>
     <summary>
-      Estilo CSL em portugues do Brasil baseado na ABNT NBR 6023.
+      Estilo CSL em portugues do Brasil baseado na ABNT NBR 6023 sem DOI/URL.
     </summary>
     <title>ABNT NBR 6023 — Mendeley Ajustado</title>
     <title-short>ABNT Mendeley</title-short>
-    <updated>2026-09-26T10:00:00-03:00</updated>
+    <updated>2026-09-26T10:30:00-03:00</updated>
   </info>
 
   <locale xml:lang="pt-BR">
@@ -147,34 +147,6 @@
     </date>
   </macro>
 
-  <macro name="doi">
-    <choose>
-      <if variable="DOI">
-        <text variable="DOI" prefix="DOI: https://doi.org/"/>
-      </if>
-    </choose>
-  </macro>
-
-  <macro name="url">
-    <choose>
-      <if variable="URL">
-        <text variable="URL" prefix="Disponível em: "/>
-      </if>
-    </choose>
-  </macro>
-
-  <macro name="access">
-    <choose>
-      <if variable="accessed">
-        <date variable="accessed" prefix="Acesso em: ">
-          <date-part name="day" suffix=" "/>
-          <date-part name="month" form="short" suffix=" "/>
-          <date-part name="year"/>
-        </date>
-      </if>
-    </choose>
-  </macro>
-
   <!-- =========================
        CITAÇÕES
        ========================= -->
@@ -204,6 +176,7 @@
     </sort>
     <layout suffix=".">
       <choose>
+        <!-- ARTIGO DE PERIÓDICO (Sem DOI, URL ou Acesso) -->
         <if type="article-journal article-magazine article-newspaper" match="any">
           <group delimiter=". ">
             <text macro="author"/>
@@ -217,11 +190,10 @@
                 <date-part name="year"/>
               </date>
             </group>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
           </group>
         </if>
+
+        <!-- LIVRO -->
         <else-if type="book">
           <group delimiter=". ">
             <text macro="author"/>
@@ -229,11 +201,10 @@
             <text macro="edition"/>
             <text macro="publisher"/>
             <text macro="year"/>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
           </group>
         </else-if>
+
+        <!-- GENÉRICO -->
         <else>
           <group delimiter=". ">
             <text macro="author"/>
@@ -242,9 +213,6 @@
             <text macro="edition"/>
             <text macro="publisher"/>
             <text macro="year"/>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
           </group>
         </else>
       </choose>
