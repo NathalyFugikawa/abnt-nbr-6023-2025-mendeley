@@ -7,13 +7,12 @@
   <info>
     <category citation-format="author-date"/>
     <id>https://raw.githubusercontent.com/NathalyFugikawa/abnt-nbr-6023-2025-mendeley/main/abnt_nbr_6023_2025_mendeley_ajustado.csl</id>
-    <link href="https://raw.githubusercontent.com/NathalyFugikawa/abnt-nbr-6023-2025-mendeley/main/abnt_nbr_6023_2025_mendeley_ajustado.csl"
-          rel="self"/>
+    <link href="https://raw.githubusercontent.com/NathalyFugikawa/abnt-nbr-6023-2025-mendeley/main/abnt_nbr_6023_2025_mendeley_ajustado.csl" rel="self"/>
     <rights license="https://creativecommons.org/licenses/by-sa/4.0/">
       Creative Commons Attribution-ShareAlike 4.0 International
     </rights>
     <summary>
-      Estilo CSL em português do Brasil baseado na ABNT NBR 6023 para referências.
+      Estilo CSL em portugues do Brasil baseado na ABNT NBR 6023.
     </summary>
     <title>ABNT NBR 6023 — Mendeley Ajustado</title>
     <title-short>ABNT Mendeley</title-short>
@@ -46,10 +45,6 @@
       <term name="month-12">dez.</term>
     </terms>
   </locale>
-
-  <!-- =========================
-       AUTORES
-       ========================= -->
 
   <macro name="author">
     <names variable="author">
@@ -95,10 +90,6 @@
     </names>
   </macro>
 
-  <!-- =========================
-       TÍTULO / EDIÇÃO
-       ========================= -->
-
   <macro name="title">
     <text variable="title" font-weight="bold"/>
   </macro>
@@ -118,10 +109,6 @@
       </if>
     </choose>
   </macro>
-
-  <!-- =========================
-       DADOS BIBLIOGRÁFICOS
-       ========================= -->
 
   <macro name="volume">
     <text variable="volume" prefix="v. "/>
@@ -144,14 +131,6 @@
 
   <macro name="year">
     <date variable="issued">
-      <date-part name="year"/>
-    </date>
-  </macro>
-
-  <macro name="date">
-    <date variable="issued">
-      <date-part name="day" suffix=" "/>
-      <date-part name="month" form="short" suffix=" "/>
       <date-part name="year"/>
     </date>
   </macro>
@@ -184,10 +163,6 @@
     </choose>
   </macro>
 
-  <!-- =========================
-       CITAÇÕES
-       ========================= -->
-
   <citation>
     <layout prefix="(" suffix=")" delimiter="; ">
       <text macro="author-citation"/>
@@ -201,23 +176,13 @@
     </layout>
   </citation>
 
-  <!-- =========================
-       REFERÊNCIAS
-       ========================= -->
-
-  <bibliography hanging-indent="false"
-                entry-spacing="1"
-                line-spacing="1">
-
+  <bibliography hanging-indent="false" entry-spacing="1" line-spacing="1">
     <sort>
       <key macro="author"/>
       <key variable="issued"/>
       <key variable="title"/>
     </sort>
-
     <layout suffix=".">
-
-      <!-- ARTIGO DE PERIÓDICO -->
       <choose>
         <if type="article-journal article-magazine article-newspaper" match="any">
           <group delimiter=". ">
@@ -237,8 +202,6 @@
             <text macro="access"/>
           </group>
         </if>
-
-        <!-- LIVRO -->
         <else-if type="book">
           <group delimiter=". ">
             <text macro="author"/>
@@ -251,110 +214,6 @@
             <text macro="access"/>
           </group>
         </else-if>
-
-        <!-- CAPÍTULO / PARTE DE LIVRO -->
-        <else-if type="chapter">
-          <group delimiter=". ">
-            <text macro="author"/>
-            <text macro="title-normal"/>
-            <group>
-              <text value="In: " />
-              <text macro="editor"/>
-              <text variable="container-title" font-weight="bold" prefix=" "/>
-            </group>
-            <text macro="edition"/>
-            <text macro="publisher"/>
-            <text macro="year"/>
-            <text macro="pages"/>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
-          </group>
-        </else-if>
-
-        <!-- TESE / DISSERTAÇÃO / TCC -->
-        <else-if type="thesis">
-          <group delimiter=". ">
-            <text macro="author"/>
-            <text macro="title"/>
-            <group delimiter=", ">
-              <text variable="genre"/>
-              <text variable="publisher"/>
-              <text variable="publisher-place"/>
-              <text macro="year"/>
-            </group>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
-          </group>
-        </else-if>
-
-        <!-- TRABALHO APRESENTADO EM EVENTO -->
-        <else-if type="paper-conference">
-          <group delimiter=". ">
-            <text macro="author"/>
-            <text macro="title-normal"/>
-            <group>
-              <text variable="event" font-weight="bold"/>
-              <text variable="event-place" prefix=", "/>
-              <date variable="issued" prefix=", ">
-                <date-part name="day" suffix=" "/>
-                <date-part name="month" form="short" suffix=" "/>
-                <date-part name="year"/>
-              </date>
-            </group>
-            <group>
-              <text value="Anais" font-weight="bold"/>
-              <text variable="container-title" prefix=". " font-weight="bold"/>
-            </group>
-            <text macro="publisher"/>
-            <text macro="year"/>
-            <text macro="pages"/>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
-          </group>
-        </else-if>
-
-        <!-- RELATÓRIO -->
-        <else-if type="report">
-          <group delimiter=". ">
-            <text macro="author"/>
-            <text macro="title"/>
-            <text variable="genre"/>
-            <text macro="publisher"/>
-            <text macro="year"/>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
-          </group>
-        </else-if>
-
-        <!-- NORMA / STANDARD -->
-        <else-if type="standard">
-          <group delimiter=". ">
-            <text macro="author"/>
-            <text macro="title"/>
-            <text macro="publisher"/>
-            <text macro="year"/>
-            <text macro="doi"/>
-            <text macro="url"/>
-            <text macro="access"/>
-          </group>
-        </else-if>
-
-        <!-- PÁGINA WEB / POST -->
-        <else-if type="webpage post-weblog post" match="any">
-          <group delimiter=". ">
-            <text macro="author"/>
-            <text macro="title"/>
-            <text macro="year"/>
-            <text macro="url"/>
-            <text macro="access"/>
-          </group>
-        </else-if>
-
-        <!-- GENÉRICO -->
         <else>
           <group delimiter=". ">
             <text macro="author"/>
@@ -369,7 +228,6 @@
           </group>
         </else>
       </choose>
-
     </layout>
   </bibliography>
 </style>
