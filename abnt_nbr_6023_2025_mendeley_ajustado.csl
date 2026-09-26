@@ -6,8 +6,8 @@
 
   <info>
     <category citation-format="author-date"/>
-    <id>https://raw.githubusercontent.com/NathalyFugikawa/abnt-nbr-6023-2025-mendeley/main/abnt_nbr_6023_2025_mendeley_ajustado.csl</id>
-    <link href="https://raw.githubusercontent.com/NathalyFugikawa/abnt-nbr-6023-2025-mendeley/main/abnt_nbr_6023_2025_mendeley_ajustado.csl" rel="self"/>
+    <id>https://raw.githubusercontent.com/NathalyFugikawa/abnt-nbr-6023-2025-mendeley/refs/heads/main/abnt_nbr_6023_2025_mendeley_ajustado.csl</id>
+    <link href="https://raw.githubusercontent.com/NathalyFugikawa/abnt-nbr-6023-2025-mendeley/refs/heads/main/abnt_nbr_6023_2025_mendeley_ajustado.csl" rel="self"/>
     <rights license="https://creativecommons.org/licenses/by-sa/4.0/">
       Creative Commons Attribution-ShareAlike 4.0 International
     </rights>
@@ -45,6 +45,10 @@
       <term name="month-12">dez.</term>
     </terms>
   </locale>
+
+  <!-- =========================
+       AUTORES
+       ========================= -->
 
   <macro name="author">
     <names variable="author">
@@ -90,6 +94,10 @@
     </names>
   </macro>
 
+  <!-- =========================
+       TÍTULO / EDIÇÃO
+       ========================= -->
+
   <macro name="title">
     <text variable="title" font-weight="bold"/>
   </macro>
@@ -109,6 +117,10 @@
       </if>
     </choose>
   </macro>
+
+  <!-- =========================
+       DADOS BIBLIOGRÁFICOS
+       ========================= -->
 
   <macro name="volume">
     <text variable="volume" prefix="v. "/>
@@ -163,6 +175,10 @@
     </choose>
   </macro>
 
+  <!-- =========================
+       CITAÇÕES
+       ========================= -->
+
   <citation>
     <layout prefix="(" suffix=")" delimiter="; ">
       <text macro="author-citation"/>
@@ -175,6 +191,10 @@
       </group>
     </layout>
   </citation>
+
+  <!-- =========================
+       REFERÊNCIAS
+       ========================= -->
 
   <bibliography hanging-indent="false" entry-spacing="1" line-spacing="1">
     <sort>
